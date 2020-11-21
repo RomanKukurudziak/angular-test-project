@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { FormComponent } from './form/form.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,11 +16,14 @@ import { MainPageComponent } from './main-page/main-page.component';
     HeaderComponent,
     FooterComponent,
     PostListComponent,
-    MainPageComponent
+    MainPageComponent,
+    FormComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
