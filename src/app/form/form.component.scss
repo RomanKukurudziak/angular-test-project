@@ -1,0 +1,30 @@
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.popup {
+  font-size: 12px;
+  position: fixed;
+  border: 1px solid darkblue;
+  bottom: 75px;
+  right: 50px;
+  visibility: hidden;
+}
+
+.error {
+  font-size: 12px;
+  font-weight: 600;
+  color: grey;
+}
+
+.myForm {
+  border-right: 1px solid #343a40;
+
+}
+
+.footer {
+
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
