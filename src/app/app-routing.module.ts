@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PostListComponent} from "./post-list/post-list.component";
-import {MainPageComponent} from "./main-page/main-page.component";
+import {PostListComponent} from './post-list/post-list.component';
+import {MainPageComponent} from './main-page/main-page.component';
 
 const routes: Routes = [
   {path: 'posts', component: PostListComponent },
@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

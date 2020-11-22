@@ -21,7 +21,6 @@ import { FormComponent } from './form/form.component';
     PostListComponent,
     MainPageComponent,
     FormComponent
-
   ],
   imports: [
     BrowserModule,
