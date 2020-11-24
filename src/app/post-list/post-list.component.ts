@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {PostService} from '../post.service';
+import {PhotoService} from '../photo.service';
+
 
 @Component({
   selector: 'app-post-list',
@@ -7,15 +9,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  posts: any;
-  constructor(private http: HttpClient) { }
 
-  url = 'https://jsonplaceholder.typicode.com/todos/1';
-
-  ngOnInit(): void {
+  constructor(public postService: PostService, public photoService: PhotoService) {
   }
 
-  getPosts() {
-
+  ngOnInit() {
+    this.postService.getPosts().subscribe();
+    this.photoService.getPhotos().subscribe();
   }
+
 }

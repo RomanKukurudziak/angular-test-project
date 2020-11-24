@@ -1,4 +1,4 @@
-<div class="footer container">
+<div class="footer container-fluid">
   <div class="row">
     <div class="myForm col-xs-10 col-sm-4 col-md-4 ">
       <form (ngSubmit)="onSubmit()" #myForm="ngForm">
@@ -26,7 +26,7 @@
                    email
                    #email="ngModel"
             >
-            <p class="error" *ngIf="name.touched && !email.valid">Please enter correct email</p>
+            <p class="error" *ngIf="email.touched && !email.valid">Please enter correct email</p>
           </div>
           <button class="btn btn-primary"
                   type="submit"

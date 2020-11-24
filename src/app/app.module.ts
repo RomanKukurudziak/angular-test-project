@@ -9,7 +9,9 @@ import { FooterComponent } from './footer/footer.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { FormComponent } from './form/form.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PhotoService } from './photo.service';
+import { PostService } from './post.service';
 
 
 
@@ -26,9 +28,13 @@ import { FormComponent } from './form/form.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    PhotoService,
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

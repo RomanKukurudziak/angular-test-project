@@ -1,1 +1,6 @@
-<p>post-list works!</p>
+<ul>
+  <li *ngFor="let post of postService.posts, let photo of photoService.photos">
+    <img src="{{photo.url}}" alt="">
+    <p>{{post.id}}</p>
+  </li>
+</ul>
