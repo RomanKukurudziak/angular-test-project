@@ -9,7 +9,6 @@ import {Post} from '../post-list/post';
 })
 export class MainPageComponent implements OnInit {
 
-
   constructor(public postService: PostService) {}
 
   posts: Post[];
