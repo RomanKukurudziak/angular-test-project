@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {PhotoService} from '../photo.service';
+import {PostService} from '../post.service';
+import {Post} from '../post-list/post';
 
 @Component({
   selector: 'app-main-page',
@@ -9,9 +10,13 @@ import {PhotoService} from '../photo.service';
 export class MainPageComponent implements OnInit {
 
 
-  constructor(public photoService: PhotoService) {
-  }
+  constructor(public postService: PostService) {}
 
-  ngOnInit() {
+  posts: Post[];
+
+  ngOnInit(): void {
+    this.postService.get5Posts().subscribe(data => {
+      this.posts = data;
+    });
   }
 }

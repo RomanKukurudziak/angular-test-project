@@ -1,6 +1,13 @@
-<ul>
-  <li *ngFor="let post of postService.posts, let photo of photoService.photos">
-    <img src="{{photo.url}}" alt="">
-    <p>{{post.id}}</p>
-  </li>
+<!--<div *ngFor="let p of , let ph of ;">-->
+
+<!--    <img card-image src="{{}}" alt="{{}}">-->
+
+
+<!--  <p card-title>{{}}</p>-->
+
+<!--</div>-->
+<ul *ngFor='let p of post, let ph of photo'>
+<li>{{p.title}}<img src="{{ph.url}}"></li>
+
 </ul>
+

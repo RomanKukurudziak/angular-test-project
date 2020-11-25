@@ -1,26 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-
-export  interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
-  public posts: Post[] = [];
+  constructor(private httpclient: HttpClient) { }
 
-  constructor(private http: HttpClient) { }
+  getPosts(): Observable<any>{
+    return this.httpclient.get('https://jsonplaceholder.typicode.com/posts?_limit=50');
+  }
 
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts?_limit=50')
-      .pipe(tap(posts => this.posts = posts));
+  getPhotos(): Observable<any>{
+    return this.httpclient.get('https://jsonplaceholder.typicode.com/photos?_limit=50');
+  }
+
+  get5Posts(): Observable<any>{
+    return this.httpclient.get('https://jsonplaceholder.typicode.com/posts?_limit=5');
   }
 
 }
+
+

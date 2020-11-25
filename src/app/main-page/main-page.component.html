@@ -1,4 +1,4 @@
-<ngb-carousel >
+<ngb-carousel class="" >
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
       <img src="https://i.pinimg.com/originals/c7/cf/f1/c7cff1544d9f3aeaaa2940e153295764.jpg" alt="Random first slide">
@@ -27,3 +27,8 @@
     </div>
   </ng-template>
 </ngb-carousel>
+
+<ul *ngFor='let p of posts'>
+  <li>{{p.title}}</li>
+
+</ul>

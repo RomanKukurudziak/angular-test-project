@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {PostService} from '../post.service';
-import {PhotoService} from '../photo.service';
+import { Photo } from './photo';
+import { Post } from './post';
+
 
 
 @Component({
@@ -8,14 +10,22 @@ import {PhotoService} from '../photo.service';
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss']
 })
+
 export class PostListComponent implements OnInit {
 
-  constructor(public postService: PostService, public photoService: PhotoService) {
+  constructor(public postService: PostService) {
   }
 
-  ngOnInit() {
-    this.postService.getPosts().subscribe();
-    this.photoService.getPhotos().subscribe();
-  }
+  post: Post[];
+  photo: Photo[];
 
+  ngOnInit(): void {
+
+    // this.postService.getPosts().subscribe(data => {
+    //   this.post = data
+    // });
+    this.postService.getPhotos().subscribe(data => {
+      this.post = data;
+    });
+  }
 }
