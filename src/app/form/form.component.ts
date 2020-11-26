@@ -16,16 +16,13 @@ export class FormComponent {
     config.keyboard = false;
   }
 
-  onSubmit() {
-    console.log(this.subscribeForm);
-  }
-
-  clearForm() {
-
-
-  }
-
   open(content) {
     this.modalService.open(content);
   }
+
+  clearForm() {
+    this.subscribeForm.reset();
+  }
+
+
 }

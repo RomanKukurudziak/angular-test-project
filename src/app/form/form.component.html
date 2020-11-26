@@ -1,7 +1,7 @@
 <div class="footer container-fluid">
   <div class="row">
     <div class="myForm col-xs-10 col-sm-4 col-md-4 ">
-      <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+      <form #myForm="ngForm">
         <div id="user-dat">
           <div class="form-group">
             <label for="username">Name</label>
@@ -11,8 +11,7 @@
                    ngModel
                    name="username"
                    required
-                   #name="ngModel"
-            >
+                   #name="ngModel">
             <p class="error" *ngIf="name.touched && !name.value">Please enter name</p>
           </div>
           <div class="form-group">
@@ -24,15 +23,13 @@
                    name="email"
                    required
                    email
-                   #email="ngModel"
-            >
+                   #email="ngModel">
             <p class="error" *ngIf="email.touched && !email.valid">Please enter correct email</p>
           </div>
           <button class="btn btn-primary"
                   type="submit"
-                  [disabled]="!myForm.valid"
-                  (click)="clearForm()"
                   (click)="open(content)"
+                  [disabled]="!myForm.valid"
                   >Subscribe
           </button>
         </div>
@@ -53,7 +50,7 @@
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Info</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click') "(click)="clearForm()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
