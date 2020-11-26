@@ -31,7 +31,9 @@
           <button class="btn btn-primary"
                   type="submit"
                   [disabled]="!myForm.valid"
-                  (click)="clearForm()">Subscribe
+                  (click)="clearForm()"
+                  (click)="open(content)"
+                  >Subscribe
           </button>
         </div>
       </form>
@@ -48,13 +50,14 @@
     </div>
   </div>
 </div>
-
-<!--PopUp-->
-
-
-
-<!--<div class="popup">-->
-<!--  <div class="popup-text">-->
-<!--    <p>Thank you  for subscribing with </p>-->
-<!--  </div>-->
-<!--</div>-->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Info</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Thank you {{this.subscribeForm.form.value.username}} for subscribing with {{this.subscribeForm.form.value.email}} adress!</p>
+  </div>
+</ng-template>
