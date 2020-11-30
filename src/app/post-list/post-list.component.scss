@@ -1,4 +1,23 @@
+
+
 img {
   max-width: 200px;
 }
+.post-card {
+  border: 2px solid gray;
+  border-radius: 5px;
+  display: flex;
+  margin: 0  auto 15px auto;
+  padding: 14px;
+  width: 600px;
+  flex-direction: column;
 
+}
+
+.pag {
+  display: flex;
+  justify-content: center;
+}
+li {
+  list-style: none;
+}

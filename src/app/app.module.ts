@@ -10,7 +10,9 @@ import { PostListComponent } from './post-list/post-list.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { FormComponent } from './form/form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PostService } from './post.service';
+import { ApiService } from './api.service';
+import { PostPageComponent } from './core/post-page/post-page.component';
+
 
 
 
@@ -21,7 +23,8 @@ import { PostService } from './post.service';
     FooterComponent,
     PostListComponent,
     MainPageComponent,
-    FormComponent
+    FormComponent,
+    PostPageComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { PostService } from './post.service';
     NgbModule
   ],
   providers: [
-    PostService
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

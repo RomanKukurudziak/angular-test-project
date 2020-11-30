@@ -16,11 +16,11 @@ export class FormComponent {
     config.keyboard = false;
   }
 
-  open(content) {
+  open(content): void {
     this.modalService.open(content);
   }
 
-  clearForm() {
+  clearForm(): void {
     this.subscribeForm.reset();
   }
 

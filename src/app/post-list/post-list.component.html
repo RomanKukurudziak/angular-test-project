@@ -1,5 +1,16 @@
-<ul *ngFor='let p of post, let ph of photo'>
-<li><img src="{{ph.url}}{{p.title}}"></li>
-
-</ul>
-
+<input type="text" [(ngModel)]="searchString" (input)="search()">
+<div class="row">
+  <div class="col-xs-12 col-12">
+    <div class="content-wrapper">
+      <div class="post-card" *ngFor="let p of post | slice: (page-1) * pageSize : page * pageSize">
+        <a href="https://jsonplaceholder.typicode.com/posts?id={{p.id}}" class="content-item"><h1>{{p.title}}</h1></a>
+        <br>
+        <p>{{p.body}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="post.length"></ngb-pagination>

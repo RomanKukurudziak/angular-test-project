@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {PostService} from '../post.service';
+import {ApiService} from '../api.service';
 import { Photo } from './photo';
 import { Post } from './post';
-
 
 
 @Component({
@@ -13,19 +12,33 @@ import { Post } from './post';
 
 export class PostListComponent implements OnInit {
 
-  constructor(public postService: PostService) {
+  constructor(public apiService: ApiService) {
   }
 
-  post: Post[];
-  photo: Photo[];
+  public post: Post[];
+  public photo: Photo[];
+  page = 1;
+  pageSize = 10;
+  searchString = '';
 
-  ngOnInit(): void {
-
-    // this.postService.getPosts().subscribe(data => {
-    //   this.post = data
-    // });
-    this.postService.getPhotos().subscribe(data => {
-      this.post = data;
+  ngOnInit() {
+    this.apiService.getPosts().subscribe(posts => {
+      this.post = posts;
+    });
+    this.apiService.getPhotos().subscribe(photos => {
+      this.photo = photos;
     });
   }
-}
+
+  search() {
+    if (this.searchString.trim() !== '') {
+      this.post = this.post.filter(res => {
+        return res.body.toLocaleLowerCase().match(this.searchString.toLocaleLowerCase());
+      });
+
+    } else if (this.searchString.trim() === '') {
+      this.ngOnInit();
+      }
+    }
+  }
+

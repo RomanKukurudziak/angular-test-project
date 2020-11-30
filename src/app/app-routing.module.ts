@@ -7,6 +7,7 @@ const routes: Routes = [
   {path: 'posts', component: PostListComponent },
   {path: 'main', component: MainPageComponent},
   {path: '', component: MainPageComponent},
+  // {path: 'post/:id', component: PostPageComponenet},
 
 ];
 
