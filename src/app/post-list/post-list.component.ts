@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from '../api.service';
-import { Post } from './post';
+import {ApiService} from '../shared/api.service';
+import { Post } from '../shared/interfaces';
 
 
 @Component({

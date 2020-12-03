@@ -2,7 +2,7 @@
 
 .carousel {
   margin: 30px auto;
-  width: 800px;
+  max-width: 800px;
 }
 
 .post-card {
@@ -10,6 +10,12 @@
   border-radius: 5px;  display: flex;
   margin: 0 auto 15px auto;
   padding: 14px;
-  width: 600px;
+  max-width: 600px;
   flex-direction: column;
+}
+
+.allposts {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
 }

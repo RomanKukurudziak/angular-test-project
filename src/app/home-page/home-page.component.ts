@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../api.service';
-import {Post} from '../post-list/post';
-import {Photo} from '../post-list/photo';
+import {ApiService} from '../shared/api.service';
+import {Post} from '../shared/interfaces';
+import {Photo} from '../shared/interfaces';
 
 @Component({
   selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss']
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
-export class MainPageComponent implements OnInit {
+export class HomePageComponent implements OnInit {
 
   constructor(public postService: ApiService) {}
   a: number = Math.ceil((Math.random() * 1000));

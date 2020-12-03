@@ -1,4 +1,8 @@
-<input type="text" [(ngModel)]="searchString" (input)="search()">
+
+<div class="search">
+  <label>Search   </label>
+<input class="search__form" type="text" [(ngModel)]="searchString" (input)="search()">
+</div>
 <div class="row">
   <div class="col-xs-12 col-12">
     <div class="content-wrapper">
@@ -10,7 +14,9 @@
     </div>
   </div>
 </div>
+<div class="pag">
 <ngb-pagination
   [(page)]="page"
   [pageSize]="pageSize"
   [collectionSize]="post.length"></ngb-pagination>
+</div>

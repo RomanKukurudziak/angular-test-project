@@ -1,1 +1,62 @@
-<p>&copy;Kukurudziak Roman 2020</p>
+<div class="footer container-fluid">
+  <div class="row">
+    <div class="myForm col-xs-10 col-sm-4 col-md-4 ">
+      <form #myForm="ngForm">
+        <div id="user-dat">
+          <div class="form-group">
+            <label for="username">Name</label>
+            <input type="text"
+                   id="username"
+                   class="form-control"
+                   ngModel
+                   name="username"
+                   required
+                   #name="ngModel">
+            <p class="error" *ngIf="name.touched && !name.value">Please enter name</p>
+          </div>
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input type="text"
+                   id="email"
+                   class="form-control"
+                   ngModel
+                   name="email"
+                   required
+                   email
+                   #email="ngModel">
+            <p class="error" *ngIf="email.touched && !email.valid">Please enter correct email</p>
+          </div>
+          <button class="btn btn-primary"
+                  type="submit"
+                  (click)="open(content)"
+                  [disabled]="!myForm.valid"
+                  >Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="myForm col-xs-10 col-sm-4 col-md-4 ">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur aut consequuntur dolores eius,
+        expedita ipsam iusto, nam nemo nulla provident qui reiciendis repellat! Animi impedit molestias ut. Architecto
+        consequatur facilis modi. Perspiciatis, rem tempore!.</p>
+    </div>
+    <div class=" col-xs-10 col-sm-4 col-md-4 ">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur aut consequuntur dolores eius,
+        expedita ipsam iusto, nam nemo nulla provident qui reiciendis repellat! Animi impedit molestias ut. Architecto
+        consequatur facilis modi. Perspiciatis, rem tempore!.</p>
+    </div>
+  </div>
+</div>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Info</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')" (click)="clearForm()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Thank you {{this.subscribeForm.form.value.username}} for subscribing with {{this.subscribeForm.form.value.email}} adress!</p>
+  </div>
+</ng-template>
+
+

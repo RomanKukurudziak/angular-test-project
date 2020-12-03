@@ -5,13 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { MainPageComponent } from './main-page/main-page.component';
-import { FormComponent } from './form/form.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ApiService } from './api.service';
-import { PostPageComponent } from './core/post-page/post-page.component';
+import { ApiService } from './shared/api.service';
+import { PostPageComponent } from './post-page/post-page.component';
 
 
 
@@ -22,8 +21,8 @@ import { PostPageComponent } from './core/post-page/post-page.component';
     HeaderComponent,
     FooterComponent,
     PostListComponent,
-    MainPageComponent,
-    FormComponent,
+    HomePageComponent,
+    FooterComponent,
     PostPageComponent
   ],
   imports: [

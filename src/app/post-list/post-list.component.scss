@@ -9,7 +9,7 @@ img {
   display: flex;
   margin: 0  auto 15px auto;
   padding: 14px;
-  width: 600px;
+  max-width: 600px;
   flex-direction: column;
 
 }
@@ -20,4 +20,14 @@ img {
 }
 li {
   list-style: none;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.search__form {
+  margin-left: 5px;
 }
