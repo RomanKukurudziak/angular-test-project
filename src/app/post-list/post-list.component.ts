@@ -27,14 +27,14 @@ export class PostListComponent implements OnInit {
   }
 
   search() {
-    // if (this.searchString.trim() !== '') {
+    if (this.searchString.trim() !== '') {
       this.post = this.post.filter(post => {
         return post.body.toLocaleLowerCase().match(this.searchString.toLocaleLowerCase());
       });
 
       if (this.searchString.trim() === '') {
-      this.ngOnInit();
+        this.ngOnInit();
       }
     }
   }
-
+}
