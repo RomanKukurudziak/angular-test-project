@@ -14,22 +14,22 @@ export class PostListComponent implements OnInit {
   constructor(public apiService: ApiService) {
   }
 
-  public post: Post[];
+  public posts: Post[];
   page = 1;
   pageSize = 10;
   searchString = '';
 
   ngOnInit() {
     this.apiService.getPosts().subscribe(posts => {
-      this.post = posts;
+      this.posts = posts;
     });
 
   }
 
   search() {
     if (this.searchString.trim() !== '') {
-      this.post = this.post.filter(post => {
-        return post.body.toLocaleLowerCase().match(this.searchString.toLocaleLowerCase());
+      this.posts = this.posts.filter(posts => {
+        return posts.body.toLocaleLowerCase().match(this.searchString.toLocaleLowerCase());
       });
 
       if (this.searchString.trim() === '') {

@@ -10,20 +10,18 @@ import {Photo} from '../shared/interfaces';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(public postService: ApiService) {}
-  a: number = Math.ceil((Math.random() * 1000));
-  b: number = Math.ceil((Math.random() * 1000));
-  c: number = Math.ceil((Math.random() * 1000));
-  images = [this.a, this.b, this.c].map((n) => `https://picsum.photos/id/${n}/900/500`);
-  posts: Post[];
-  photos: Photo[];
+  constructor(public apiService: ApiService) {}
+  posts: Post;
+  photos: Photo;
 
   ngOnInit(): void {
-    this.postService.get5Posts().subscribe(data => {
-      this.posts = data;
+    const id: number = (Math.ceil(Math.random()*50));
+    this.apiService.getPosts().subscribe(posts => {
+      this.posts = posts;
     });
-    this.postService.getPhotos().subscribe(data => {
-      this.photos = data;
-    });
+    this.apiService.getPhotos(id).subscribe(photos => {
+      this.photos = photos;
+
+    })
   }
 }
