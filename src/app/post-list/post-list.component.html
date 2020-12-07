@@ -1,19 +1,17 @@
 <div class="search">
   <label>Search   </label>
-<input class="search__form" type="text" [(ngModel)]="searchString" (input)="search()">
+  <input class="search__form" type="text" [(ngModel)]="searchString" (input)="search()">
 </div>
-<div class="row">
-  <div class="container">
-      <div class="post-card" *ngFor="let p of posts | slice: (page-1) * pageSize : page * pageSize">
-        <a  [routerLink]="['/post', p.id]" class="content-item"><h3>{{p.title}}</h3></a>
-        <br>
-        <p>{{p.body}}</p>
-      </div>
-    </div>
+<div class="container">
+  <div class="post-card" *ngFor="let p of posts | slice: (page-1) * pageSize : page * pageSize">
+    <a  [routerLink]="['/post', p.id]" class="content-item"><h3>{{p.title}}</h3></a>
+    <br>
+    <p>{{p.body}}</p>
   </div>
+</div>
 <div class="pag">
-<ngb-pagination
-  [(page)]="page"
-  [pageSize]="pageSize"
-  [collectionSize]="posts.length"></ngb-pagination>
+  <ngb-pagination
+    [(page)]="page"
+    [pageSize]="pageSize"
+    [collectionSize]="posts.length"></ngb-pagination>
 </div>

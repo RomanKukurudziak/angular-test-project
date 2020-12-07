@@ -1,21 +1,20 @@
-img {
-  max-width: 200px;
-}
 .post-card {
   border: 2px solid gray;
   border-radius: 5px;
   display: flex;
-  margin: 0  auto 5px auto;
+  flex-direction: column;
+  margin: 0  auto 10px auto;
   padding: 14px;
   max-width: 600px;
-  flex-direction: column;
 
 }
 
 .pag {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
+
 li {
   list-style: none;
 }
@@ -24,4 +23,8 @@ li {
   display: flex;
   justify-content: center;
   padding: 15px;
+}
+
+.container {
+  margin-bottom: 15px;
 }
