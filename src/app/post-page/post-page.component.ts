@@ -18,8 +18,8 @@ export class PostPageComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.apiService.getPostById(id).subscribe(post => this.post = post)
-    this.apiService.getPhotos(id).subscribe(photo => this.photo = photo)
+    this.apiService.getPostById(id).subscribe(post => this.post = post);
+    this.apiService.getPhotos(id).subscribe(photo => this.photo = photo);
 
   }
 

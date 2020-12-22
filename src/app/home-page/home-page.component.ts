@@ -15,13 +15,12 @@ export class HomePageComponent implements OnInit {
   photos: Photo;
 
   ngOnInit(): void {
-    const id: number = (Math.ceil(Math.random()*50));
+    const id: number = (Math.ceil(Math.random() * 50));
     this.apiService.getPosts().subscribe(posts => {
       this.posts = posts;
     });
     this.apiService.getPhotos(id).subscribe(photos => {
       this.photos = photos;
-
     })
   }
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Post} from './interfaces';
-import {Photo} from "./interfaces";
+import {Photo} from './interfaces';
 
 
 @Injectable({
@@ -21,7 +21,7 @@ export class ApiService {
   }
 
   getPostById(id: number): Observable<Post> {
-    return this.httpclient.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    return this.httpclient.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
   }
 
   get5Photos(): Observable<Photo> {
